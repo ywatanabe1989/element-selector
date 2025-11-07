@@ -1,56 +1,33 @@
+<!-- ---
+!-- Timestamp: 2025-11-08 01:38:26
+!-- Author: ywatanabe
+!-- File: /home/ywatanabe/proj/element-selector/README.md
+!-- --- -->
+
 # 🔍 Element Inspector
 
 <div align="center">
 
 ![Demo](docs/demo.gif)
 
-**Visual debugging tool for web developers**
-Press `Alt+I` to inspect any element on any webpage
-
-[🎮 Try Demo](https://YOUR-USERNAME.github.io/element-inspector/demo.html) • [📦 Install](#-quick-start) • [📖 Docs](#-features)
+**Visual debugging tool for web developers and AI**
 
 </div>
 
 ---
 
-## ✨ Features
-
-- 🎨 **Color-coded visualization** - Elements colored by nesting depth
-- 📋 **One-click debug info** - Click any label to copy comprehensive debug data for AI
-- 📸 **Full page capture** - Press `Alt+C` to export entire page structure
-- 🔲 **Rectangle selection** - Press `Ctrl+Alt+I` to select multiple elements at once
-- 🤖 **AI-ready output** - All debug info formatted for pasting into Claude/ChatGPT
-
 ## ⌨️ Keyboard Shortcuts
 
-| Shortcut     | Action                         |
-|--------------|--------------------------------|
-| `Alt+I`      | Toggle inspector overlay       |
-| `Alt+C`      | Copy full page structure       |
-| `Ctrl+Alt+I` | Start rectangle selection mode |
-| `Esc`        | Cancel selection mode          |
+| Shortcut     | Action                         | Example                                                                   |
+|--------------|--------------------------------|---------------------------------------------------------------------------|
+| `Alt+I`      | Toggle inspector overlay       | [AI Ready Information for a Signle Element](./docs/example_single.md)     |
+| `Ctrl+Alt+I` | Start rectangle selection mode | [AI Ready Information for Multiple Elements](./docs/example_rectangle.md) |
+| `Esc`        | Cancel selection mode          |                                                                           |
 
 ## 🚀 Quick Start
 
-### Option 1: Bookmarklet (Easiest - No Installation!)
-
-1. Visit [demo.html](demo.html)
-2. Drag the **🔍 Element Inspector** button to your bookmarks bar
-3. Click it on any website to activate
-
-### Option 2: Include in Your Project
-
 ```html
 <script src="element-inspector.js"></script>
-```
-
-### Option 3: Browser Console
-
-Paste this on any webpage:
-```javascript
-var s=document.createElement('script');
-s.src='https://YOUR-USERNAME.github.io/element-inspector/element-inspector.js';
-document.head.appendChild(s);
 ```
 
 ## 💡 Use Cases
@@ -69,10 +46,12 @@ If this tool saved you debugging time:
 
 ## 📄 License
 
-MIT - Do whatever you want with it
+MIT
 
 ---
 
-Made by a developer who got tired of console.log debugging
+## Contact
+
+Yusuke Watanabe (ywatanabe@scitex.ai)
 
 <!-- EOF -->
