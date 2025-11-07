@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Inspector - Demo & Installation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .bookmarklet-section {
+            background: #f8f9fa;
+            border: 2px dashed #667eea;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .bookmarklet {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            cursor: move;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .bookmarklet:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .instruction {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .keyboard-shortcuts {
+            background: #2d2d2d;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+            margin: 20px 0;
+        }
+
+        .shortcut {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #444;
+        }
+
+        .shortcut:last-child {
+            border-bottom: none;
+        }
+
+        .key {
+            background: #444;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+            font-size: 0.9em;
+        }
+
+        .demo-section {
+            margin: 40px 0;
+        }
+
+        .test-elements {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .test-box {
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .test-box.blue { border-color: #3B82F6; background: #EFF6FF; }
+        .test-box.green { border-color: #10B981; background: #ECFDF5; }
+        .test-box.orange { border-color: #F59E0B; background: #FFFBEB; }
+
+        footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+        }
+
+        .github-link {
+            display: inline-block;
+            margin: 10px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .github-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Element Inspector</h1>
+            <p class="subtitle">Visual debugging tool for web developers - See every element, debug with AI</p>
+        </header>
+
+        <div class="content">
+            <!-- Bookmarklet Installation -->
+            <section class="bookmarklet-section">
+                <h2>📌 Install as Bookmarklet (Easiest!)</h2>
+                <p style="margin: 15px 0;">Drag this button to your bookmarks bar:</p>
+                <a href="javascript:(function(){if(window.elementInspector){window.elementInspector.toggle()}else{var s=document.createElement('script');s.src='https://YOUR-GITHUB-USERNAME.github.io/element-inspector/element-inspector.js';document.head.appendChild(s)}})();"
+                   class="bookmarklet">
+                   🔍 Element Inspector
+                </a>
+                <div class="instruction">
+                    <strong>How to use:</strong><br>
+                    1. Drag the button above to your bookmarks bar<br>
+                    2. Visit any website<br>
+                    3. Click the bookmark to activate Element Inspector<br>
+                    4. That's it! No installation needed.
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section>
+                <h2>✨ Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>🎨 Visual Inspector</h3>
+                        <p>See all elements with color-coded overlays based on nesting depth</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📋 AI-Ready Debug Info</h3>
+                        <p>Click any element to copy comprehensive debug data formatted for AI assistants</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📸 Full Page Capture</h3>
+                        <p>Export entire page structure with one keyboard shortcut</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🔲 Rectangle Selection</h3>
+                        <p>Select multiple elements at once with click-and-drag</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Keyboard Shortcuts -->
+            <section>
+                <h2>⌨️ Keyboard Shortcuts</h2>
+                <div class="keyboard-shortcuts">
+                    <div class="shortcut">
+                        <span><span class="key">Alt</span> + <span class="key">I</span></span>
+                        <span>Toggle inspector overlay</span>
+                    </div>
+                    <div class="shortcut">
+                        <span><span class="key">Alt</span> + <span class="key">C</span></span>
+                        <span>Copy full page structure</span>
+                    </div>
+                    <div class="shortcut">
+                        <span><span class="key">Ctrl</span> + <span class="key">Alt</span> + <span class="key">I</span></span>
+                        <span>Start rectangle selection mode</span>
+                    </div>
+                    <div class="shortcut">
+                        <span><span class="key">Esc</span></span>
+                        <span>Cancel selection mode</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Alternative Installation Methods -->
+            <section>
+                <h2>🛠️ Alternative Installation</h2>
+
+                <h3 style="margin-top: 30px;">For Developers</h3>
+                <p>Add to your HTML:</p>
+                <code style="display: block; padding: 15px; margin: 10px 0;">
+                    &lt;script src="element-inspector.js"&gt;&lt;/script&gt;
+                </code>
+
+                <h3 style="margin-top: 30px;">Via NPM (Coming Soon)</h3>
+                <code style="display: block; padding: 15px; margin: 10px 0;">
+                    npm install element-inspector
+                </code>
+
+                <h3 style="margin-top: 30px;">Browser Console</h3>
+                <p>Paste this in any webpage's console:</p>
+                <code style="display: block; padding: 15px; margin: 10px 0; white-space: pre-wrap; word-break: break-all;">
+var s=document.createElement('script');
+s.src='https://YOUR-GITHUB-USERNAME.github.io/element-inspector/element-inspector.js';
+document.head.appendChild(s);
+                </code>
+            </section>
+
+            <!-- Demo Section -->
+            <section class="demo-section">
+                <h2>🎮 Try It Now!</h2>
+                <p>If you've included the script on this page, press <strong>Alt+I</strong> to see it in action:</p>
+                <div class="test-elements">
+                    <div class="test-box blue" id="test-box-1">
+                        <h3>Test Box 1</h3>
+                        <p>This is a test element with an ID</p>
+                    </div>
+                    <div class="test-box green" id="test-box-2">
+                        <h3>Test Box 2</h3>
+                        <p>Click the label to copy debug info</p>
+                    </div>
+                    <div class="test-box orange" id="test-box-3">
+                        <h3>Test Box 3</h3>
+                        <p>Try rectangle selection mode!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Use Cases -->
+            <section>
+                <h2>💡 Use Cases</h2>
+                <ul style="line-height: 2;">
+                    <li>Debug CSS layout issues visually</li>
+                    <li>Find elements for web scraping</li>
+                    <li>Generate element reports for AI debugging with Claude/ChatGPT</li>
+                    <li>Visual inspection of DOM structure</li>
+                    <li>Quick CSS selector generation</li>
+                    <li>Teaching HTML/CSS to students</li>
+                </ul>
+            </section>
+        </div>
+
+        <footer>
+            <p><strong>Element Inspector</strong> - Made for developers who got tired of console.log debugging</p>
+            <a href="https://github.com/YOUR-USERNAME/element-inspector" class="github-link">⭐ Star on GitHub</a>
+            <a href="https://buymeacoffee.com/ywatanabe" class="github-link">☕ Buy Me A Coffee</a>
+            <p style="margin-top: 20px; font-size: 0.9em;">MIT License - Free to use for any purpose</p>
+        </footer>
+    </div>
+
+    <!-- Include the inspector on this demo page -->
+    <script src="element-inspector.js"></script>
+</body>
+</html>
